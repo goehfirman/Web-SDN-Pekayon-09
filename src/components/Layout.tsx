@@ -80,10 +80,10 @@ export default function Layout() {
                 <a href="#" className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white transition-colors">
                   <Facebook className="w-4 h-4" />
                 </a>
-                <a href="#" className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-pink-600 hover:text-white transition-colors">
+                <a href="https://www.instagram.com/sdnpekayon09/?hl=en" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-pink-600 hover:text-white transition-colors">
                   <Instagram className="w-4 h-4" />
                 </a>
-                <a href="#" className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-red-600 hover:text-white transition-colors">
+                <a href="https://www.youtube.com/@sdnegeripekayon09" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-red-600 hover:text-white transition-colors">
                   <Youtube className="w-4 h-4" />
                 </a>
               </div>
@@ -99,11 +99,11 @@ export default function Layout() {
                 </li>
                 <li className="flex items-center gap-3">
                   <Phone className="w-5 h-5 text-blue-500 shrink-0" />
-                  <span className="text-gray-400 text-sm">(021) 12345678</span>
+                  <span className="text-gray-400 text-sm">(021) 8706842</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-blue-500 shrink-0" />
-                  <span className="text-gray-400 text-sm">info@sdnpekayon09.sch.id</span>
+                  <span className="text-gray-400 text-sm">sdnegeripekayon09@gmail.com</span>
                 </li>
               </ul>
             </div>
@@ -111,14 +111,18 @@ export default function Layout() {
             {/* Location Map */}
             <div>
               <h3 className="font-bold text-white mb-6">Lokasi Sekolah</h3>
-              <div className="relative rounded-xl overflow-hidden h-32 bg-gray-800 group cursor-pointer">
-                <img src="https://picsum.photos/seed/map/400/200" alt="Map" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" referrerPolicy="no-referrer" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full text-xs font-medium flex items-center gap-2 shadow-lg transition-colors">
-                    <MapPin className="w-3 h-3" />
-                    Buka di Maps
-                  </button>
-                </div>
+              <div className="relative rounded-xl overflow-hidden h-48 bg-gray-800">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d1241.828773940841!2d106.86028425675264!3d-6.342117313584588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d-6.341923599999999!2d106.8608739!4m5!1s0x2e69ec543baa8619%3A0x2dd17b6762583a9f!2sSDN%20Pekayon%2009%20Pagi%2C%20No.76G%2C%20Jl.%20Pendidikan%20No.4%2C%20RT.4%2FRW.9%2C%20Pekayon%2C%20Kec.%20Ps.%20Rebo%2C%20Kota%20Jakarta%20Timur%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2013710!3m2!1d-6.3420333!2d106.8609505!5e0!3m2!1sid!2sid!4v1772639938095!5m2!1sid!2sid" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen={true} 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Peta Lokasi SDN Pekayon 09"
+                  className="absolute inset-0"
+                ></iframe>
               </div>
             </div>
           </div>
@@ -126,7 +130,7 @@ export default function Layout() {
 
         {/* Bottom Bar */}
         <div className="bg-yellow-400 py-4 text-center">
-          <p className="text-gray-900 text-sm font-medium">Pusdatin © Kemendikdasmen 2026</p>
+          <p className="text-gray-900 text-sm font-medium">Dikembangkan oleh Teguh Firmansyah Apriliana @goehfirmaan</p>
         </div>
       </footer>
     </div>

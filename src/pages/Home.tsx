@@ -1,7 +1,33 @@
+import { useState, useEffect } from 'react';
 import { ArrowRight, Info, ExternalLink, Calendar, MapPin, Phone, Mail, PlayCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+const heroImages = [
+  "https://lh3.googleusercontent.com/d/1wWNEZx6oXvznThFOSK3GEP9lFipLEOU0",
+  "https://lh3.googleusercontent.com/d/1RHsuJDKxdfB8mjCAH4DhnFw2Zj_H6V79",
+  "https://lh3.googleusercontent.com/d/1-pZRuUDVUzLPyQEglLNj35aQjIGkvgqK",
+  "https://lh3.googleusercontent.com/d/1ry8eMksV8766AyTrmJ6n-jqNAHJlo8pY",
+  "https://lh3.googleusercontent.com/d/1-EbTdnZ7YOc4DcHn_0mcMhgFldaX8TUx",
+  "https://lh3.googleusercontent.com/d/1-mSlGfyuRQWIdqyj1iq3aPWTvsGAL_i8",
+  "https://lh3.googleusercontent.com/d/1i87iipR-lY4QW9w1EU0Iqznr5gVz3yap",
+  "https://lh3.googleusercontent.com/d/1YaM3voFuO4rkJ6awTD1Bxw4JEizihIKo",
+  "https://lh3.googleusercontent.com/d/1mjQ40Vf2dxaNtzYZxITuq4uWP66TkeA0",
+  "https://lh3.googleusercontent.com/d/1Brs3tnnfAUNdWoprELGoZ74ADdMjnEwP",
+  "https://lh3.googleusercontent.com/d/1z7nlWnad5CSqgahSV65YJpX42aBzoReH",
+  "https://lh3.googleusercontent.com/d/18j9MX94Fr2n-fdlqwTp75xWVMUAHhUOh"
+];
+
 export default function Home() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="bg-gray-50 pb-20">
       {/* Hero Section */}
@@ -34,12 +60,19 @@ export default function Home() {
           <div className="md:w-1/2 flex justify-center md:justify-end relative">
              {/* Decorative elements */}
              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-yellow-300 rounded-full blur-3xl opacity-20"></div>
-             <img 
-               src="https://lh3.googleusercontent.com/d/16B0KWfT3Z3al_ABpgdl3flUSBxntQ3BP" 
-               alt="Student Illustration" 
-               className="relative z-10 w-full max-w-md rounded-2xl shadow-2xl object-cover border-4 border-white/20"
-               referrerPolicy="no-referrer"
-             />
+             <div className="relative z-10 w-full max-w-md aspect-[4/3] rounded-2xl shadow-2xl border-4 border-white/20 overflow-hidden bg-blue-400/20">
+               {heroImages.map((img, index) => (
+                 <img 
+                   key={index}
+                   src={img} 
+                   alt={`Slideshow ${index + 1}`} 
+                   className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+                     index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                   }`}
+                   referrerPolicy="no-referrer"
+                 />
+               ))}
+             </div>
           </div>
         </div>
         
@@ -67,8 +100,7 @@ export default function Home() {
                 <p className="text-sm text-gray-500 text-center">Kepala Sekolah</p>
               </div>
               <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-4xl text-blue-500 font-serif leading-none">"</span>
+                <div className="mb-4">
                   <h2 className="text-2xl font-bold text-blue-600">Sambutan Kepala Sekolah</h2>
                 </div>
                 <p className="text-gray-600 leading-relaxed mb-6">
