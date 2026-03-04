@@ -15,9 +15,9 @@ export default function Home() {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-20 pb-32 md:pt-32 md:pb-48 flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-12 md:mb-0">
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
               Selamat Datang di <br />
-              <span className="text-yellow-400">SDN Pekayon 09</span>
+              <span className="text-yellow-400">SDN Pekayon 09 <br /> Jakarta</span>
             </h1>
             <p className="text-lg md:text-xl text-blue-100 mb-8 max-w-lg leading-relaxed">
               Membangun generasi cerdas, berkarakter, dan berbudaya lingkungan untuk masa depan yang gemilang.
@@ -77,80 +77,6 @@ export default function Home() {
                 <Link to="/profil" className="text-blue-600 font-medium hover:text-blue-700 flex items-center gap-2">
                   Baca selengkapnya <ArrowRight className="w-4 h-4" />
                 </Link>
-              </div>
-            </div>
-
-            {/* Identitas Sekolah */}
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
-                  <Info className="w-5 h-5" />
-                </div>
-                <h2 className="text-2xl font-bold text-gray-900">Identitas Sekolah</h2>
-              </div>
-              
-              {/* Tabs */}
-              <div className="flex overflow-x-auto border-b border-gray-200 mb-6 pb-px">
-                <button className="px-6 py-3 text-sm font-medium text-blue-600 border-b-2 border-blue-600 whitespace-nowrap">
-                  Identitas Satuan Pendidikan
-                </button>
-                <button className="px-6 py-3 text-sm font-medium text-gray-500 hover:text-gray-700 whitespace-nowrap">
-                  Dokumen dan Perijinan
-                </button>
-                <button className="px-6 py-3 text-sm font-medium text-gray-500 hover:text-gray-700 whitespace-nowrap">
-                  Sarana dan Prasarana
-                </button>
-                <button className="px-6 py-3 text-sm font-medium text-gray-500 hover:text-gray-700 whitespace-nowrap">
-                  Kontak
-                </button>
-                <button className="px-6 py-3 text-sm font-medium text-gray-500 hover:text-gray-700 whitespace-nowrap">
-                  Peta
-                </button>
-              </div>
-
-              <h3 className="font-bold text-lg text-center mb-6 py-3 border-b border-gray-100">SDN PEKAYON 09</h3>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-sm">
-                <div className="grid grid-cols-3 gap-4 py-2 border-b border-gray-50">
-                  <span className="text-gray-500 col-span-1">Nama</span>
-                  <span className="font-medium text-gray-900 col-span-2">: SDN Pekayon 09</span>
-                </div>
-                <div className="grid grid-cols-3 gap-4 py-2 border-b border-gray-50">
-                  <span className="text-gray-500 col-span-1">NPSN</span>
-                  <span className="font-medium text-blue-600 col-span-2">: 20108981</span>
-                </div>
-                <div className="grid grid-cols-3 gap-4 py-2 border-b border-gray-50">
-                  <span className="text-gray-500 col-span-1">Alamat</span>
-                  <span className="font-medium text-gray-900 col-span-2">: Jl. Pendidikan RT.004 RW.009 No.4</span>
-                </div>
-                <div className="grid grid-cols-3 gap-4 py-2 border-b border-gray-50">
-                  <span className="text-gray-500 col-span-1">Desa/Kelurahan</span>
-                  <span className="font-medium text-gray-900 col-span-2">: PEKAYON</span>
-                </div>
-                <div className="grid grid-cols-3 gap-4 py-2 border-b border-gray-50">
-                  <span className="text-gray-500 col-span-1">Kecamatan/Kota (LN)</span>
-                  <span className="font-medium text-gray-900 col-span-2">: KEC. PASAR REBO</span>
-                </div>
-                <div className="grid grid-cols-3 gap-4 py-2 border-b border-gray-50">
-                  <span className="text-gray-500 col-span-1">Kab.-Kota/Negara (LN)</span>
-                  <span className="font-medium text-gray-900 col-span-2">: KOTA ADM. JAKARTA TIMUR</span>
-                </div>
-                <div className="grid grid-cols-3 gap-4 py-2 border-b border-gray-50">
-                  <span className="text-gray-500 col-span-1">Propinsi/Luar Negeri (LN)</span>
-                  <span className="font-medium text-gray-900 col-span-2">: PROV. D.K.I. JAKARTA</span>
-                </div>
-                <div className="grid grid-cols-3 gap-4 py-2 border-b border-gray-50">
-                  <span className="text-gray-500 col-span-1">Status Sekolah</span>
-                  <span className="font-medium text-gray-900 col-span-2">: NEGERI</span>
-                </div>
-                <div className="grid grid-cols-3 gap-4 py-2 border-b border-gray-50">
-                  <span className="text-gray-500 col-span-1">Bentuk Pendidikan</span>
-                  <span className="font-medium text-gray-900 col-span-2">: SD</span>
-                </div>
-                <div className="grid grid-cols-3 gap-4 py-2 border-b border-gray-50">
-                  <span className="text-gray-500 col-span-1">Jenjang Pendidikan</span>
-                  <span className="font-medium text-gray-900 col-span-2">: DIKDAS</span>
-                </div>
               </div>
             </div>
 
