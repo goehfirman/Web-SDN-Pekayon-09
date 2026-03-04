@@ -17,7 +17,7 @@ export default function Profil() {
                 <span className="text-amber-400">SDN Pekayon 09</span>
               </h1>
               <p className="text-lg text-blue-50 mb-8 leading-relaxed">
-                Mengenal lebih dalam institusi pendidikan yang berkomitmen mencetak generasi cerdas, berkarakter, dan berbudaya lingkungan untuk masa depan yang gemilang.
+                Mengenal lebih dalam institusi pendidikan yang berkomitmen mencetak generasi yang beriman, bertaqwa kepada Tuhan Yang Maha Esa, berkarakter, unggul dan berprestasi.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a className="bg-amber-400 text-slate-900 px-8 py-3 rounded-full font-bold hover:bg-yellow-400 transition-all flex items-center gap-2" href="#visi-misi">

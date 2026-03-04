@@ -54,10 +54,11 @@ export default function Home() {
           <div className="md:w-1/2 mb-12 md:mb-0">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
               Selamat Datang di <br />
-              <span className="text-yellow-400">SDN Pekayon 09 <br /> Jakarta</span>
+              <span className="text-yellow-400">SDN Pekayon 09</span> <br />
+              Jakarta
             </h1>
             <p className="text-lg md:text-xl text-blue-100 mb-8 max-w-lg leading-relaxed">
-              Membangun generasi cerdas, berkarakter, dan berbudaya lingkungan untuk masa depan yang gemilang.
+              Membangun generasi yang beriman, bertaqwa kepada Tuhan Yang Maha Esa, berkarakter, unggul dan berprestasi.
             </p>
             <div className="flex flex-wrap gap-4">
               <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-3 rounded-full font-bold transition-colors shadow-lg">

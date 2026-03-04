@@ -1,17 +1,30 @@
+import { useState } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import { MapPin, Phone, Mail, Facebook, Instagram, Youtube, Sun } from 'lucide-react';
+import { MapPin, Phone, Mail, Facebook, Instagram, Youtube, Sun, ChevronDown, Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 
 const navLinks = [
   { name: 'Beranda', path: '/' },
-  { name: 'Profil', path: '/profil' },
+  { 
+    name: 'Tentang Sekolah', 
+    dropdown: [
+      { name: 'Profil', path: '/profil' },
+      { name: 'Fasilitas dan Ekstrakurikuler', path: '/fasilitas' },
+      { name: 'Program Unggulan', path: '/program-unggulan' },
+      { name: 'SPMB', path: '/spmb' },
+      { name: 'Kontak', path: '/kontak' },
+    ]
+  },
   { name: 'Guru & Tendik', path: '/guru' },
-  { name: 'Fasilitas & Ekskul', path: '/fasilitas' },
   { name: 'Berita', path: '/berita' },
-  { name: 'PPDB', path: '/ppdb' },
+  { name: 'Bahan Ajar', path: '/bahan-ajar' },
 ];
 
 export default function Layout() {
   const location = useLocation();
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileAboutOpen, setIsMobileAboutOpen] = useState(false);
 
   return (
     <div className="min-h-screen flex flex-col font-sans text-gray-800 bg-gray-50">
@@ -20,28 +33,75 @@ export default function Layout() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <div className="flex items-center gap-3">
+            <Link to="/" className="flex items-center gap-3">
               <img src="https://lh3.googleusercontent.com/d/1YONdbm4C4cYaegmOmNzPShMzkgj0e5o0" alt="Logo SDN Pekayon 09" className="w-10 h-10 rounded-full object-cover" referrerPolicy="no-referrer" />
               <div>
                 <h1 className="font-bold text-lg leading-tight text-gray-900">SDN Pekayon 09</h1>
                 <p className="text-xs text-gray-500">Aktif, Kreatif, Berprestasi</p>
               </div>
-            </div>
+            </Link>
 
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  className={`text-sm font-medium transition-colors ${
-                    location.pathname === link.path
-                      ? 'text-blue-600 border-b-2 border-blue-600 py-7'
-                      : 'text-gray-600 hover:text-blue-600 py-7'
-                  }`}
-                >
-                  {link.name}
-                </Link>
+                link.dropdown ? (
+                  <div 
+                    key={link.name}
+                    className="relative group"
+                    onMouseEnter={() => setIsAboutOpen(true)}
+                    onMouseLeave={() => setIsAboutOpen(false)}
+                  >
+                    <button
+                      className={`flex items-center gap-1 text-sm font-medium transition-colors py-7 ${
+                        link.dropdown.some(item => location.pathname === item.path)
+                          ? 'text-blue-600'
+                          : 'text-gray-600 hover:text-blue-600'
+                      }`}
+                    >
+                      {link.name}
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isAboutOpen ? 'rotate-180' : ''}`} />
+                    </button>
+                    
+                    <AnimatePresence>
+                      {isAboutOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 10 }}
+                          transition={{ duration: 0.2 }}
+                          className="absolute top-full left-0 w-64 bg-white shadow-xl rounded-b-xl border-t-2 border-blue-600 py-2 overflow-hidden"
+                        >
+                          {link.dropdown.map((subItem) => (
+                            <Link
+                              key={subItem.name}
+                              to={subItem.path}
+                              onClick={() => setIsAboutOpen(false)}
+                              className={`block px-6 py-3 text-sm transition-colors ${
+                                location.pathname === subItem.path
+                                  ? 'bg-blue-50 text-blue-600 font-semibold'
+                                  : 'text-gray-600 hover:bg-gray-50 hover:text-blue-600'
+                              }`}
+                            >
+                              {subItem.name}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ) : (
+                  <Link
+                    key={link.name}
+                    to={link.path}
+                    className={`text-sm font-medium transition-colors ${
+                      location.pathname === link.path
+                        ? 'text-blue-600 border-b-2 border-blue-600 py-7'
+                        : 'text-gray-600 hover:text-blue-600 py-7'
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                )
               ))}
             </nav>
 
@@ -54,8 +114,96 @@ export default function Layout() {
                 Portal Siswa
               </button>
             </div>
+
+            {/* Mobile Menu Button */}
+            <div className="md:hidden flex items-center gap-2">
+              <button className="p-2 text-gray-500 rounded-full hover:bg-gray-100">
+                <Sun className="w-5 h-5" />
+              </button>
+              <button 
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="p-2 text-gray-600 hover:text-blue-600 transition-colors"
+              >
+                {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden bg-white border-t border-gray-100 overflow-hidden"
+            >
+              <div className="px-4 py-6 space-y-4">
+                {navLinks.map((link) => (
+                  link.dropdown ? (
+                    <div key={link.name} className="space-y-2">
+                      <button
+                        onClick={() => setIsMobileAboutOpen(!isMobileAboutOpen)}
+                        className={`flex items-center justify-between w-full text-left font-medium py-2 ${
+                          link.dropdown.some(item => location.pathname === item.path)
+                            ? 'text-blue-600'
+                            : 'text-gray-600'
+                        }`}
+                      >
+                        {link.name}
+                        <ChevronDown className={`w-4 h-4 transition-transform ${isMobileAboutOpen ? 'rotate-180' : ''}`} />
+                      </button>
+                      <AnimatePresence>
+                        {isMobileAboutOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            className="pl-4 space-y-2 overflow-hidden border-l-2 border-blue-100 ml-1"
+                          >
+                            {link.dropdown.map((subItem) => (
+                              <Link
+                                key={subItem.name}
+                                to={subItem.path}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className={`block py-2 text-sm ${
+                                  location.pathname === subItem.path
+                                    ? 'text-blue-600 font-semibold'
+                                    : 'text-gray-500'
+                                }`}
+                              >
+                                {subItem.name}
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ) : (
+                    <Link
+                      key={link.name}
+                      to={link.path}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={`block font-medium py-2 ${
+                        location.pathname === link.path
+                          ? 'text-blue-600'
+                          : 'text-gray-600'
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  )
+                ))}
+                <div className="pt-4 border-t border-gray-100">
+                  <button className="w-full bg-blue-500 text-white py-3 rounded-xl font-medium">
+                    Portal Siswa
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </header>
 
       {/* Main Content */}
