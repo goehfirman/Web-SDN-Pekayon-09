@@ -9,7 +9,7 @@ const teachers = [
   },
   {
     name: 'Suparja, S.Pd',
-    role: 'Wakil Kepala Sekolah',
+    role: 'Wakil Kepala Sekolah Guru Kelas 6B',
     image: 'https://lh3.googleusercontent.com/d/1_4CvNwIZWeSJUKyZBAr5FRFgkbQInDzC',
     bgColor: 'bg-lime-100',
   },
@@ -26,7 +26,7 @@ const teachers = [
     bgColor: 'bg-green-200',
   },
   {
-    name: 'Yuni Sulisyati, S.Pd',
+    name: 'Yuni Sulistyati, S.Pd',
     role: 'Guru Kelas 5B',
     image: 'https://lh3.googleusercontent.com/d/15uarRfasN74SqmKRiJcByMHUfEkwecB4',
     bgColor: 'bg-red-100',
