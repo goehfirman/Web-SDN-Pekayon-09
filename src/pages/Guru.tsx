@@ -4,50 +4,122 @@ const teachers = [
   {
     name: 'Veria Wulandari, M.Pd',
     role: 'Kepala Sekolah',
-    image: 'https://lh3.googleusercontent.com/d/1rnhBqlCjwZ3ZgQWikjDMslKCXRyodV2o',
+    image: 'https://lh3.googleusercontent.com/d/1Gz5YjWKIPhVLepZaTxMQkBhfHHq5daRU',
     bgColor: 'bg-emerald-100',
   },
   {
-    name: 'Siti Aminah, S.Pd',
-    role: 'Guru Kelas 1A',
-    image: 'https://picsum.photos/seed/siti/300/300',
-    bgColor: 'bg-orange-100',
+    name: 'Suparja, S.Pd',
+    role: 'Wakil Kepala Sekolah',
+    image: 'https://lh3.googleusercontent.com/d/1_4CvNwIZWeSJUKyZBAr5FRFgkbQInDzC',
+    bgColor: 'bg-lime-100',
   },
   {
-    name: 'Rahmat Hidayat, S.Pd',
-    role: 'Guru Penjasorkes',
-    image: 'https://picsum.photos/seed/rahmat/300/300',
-    bgColor: 'bg-yellow-100',
+    name: 'Teguh Firmansyah Apriliana, S.Pd',
+    role: 'Guru Kelas 6A',
+    image: 'https://lh3.googleusercontent.com/d/1F48sEZDGtkqGAC6QXuKzo4cTZctpvFUX',
+    bgColor: 'bg-amber-100',
   },
   {
-    name: 'Nisa Utami, S.PdI',
-    role: 'Guru Pend. Agama Islam',
-    image: 'https://picsum.photos/seed/nisa/300/300',
+    name: 'Ristriyono Ahmad Nugroho, S.Pd',
+    role: 'Guru Kelas 5A',
+    image: 'https://lh3.googleusercontent.com/d/1c6Z54EkMet6qAvcVHm-K9131dl9dOD1K',
+    bgColor: 'bg-green-200',
+  },
+  {
+    name: 'Yuni Sulisyati, S.Pd',
+    role: 'Guru Kelas 5B',
+    image: 'https://lh3.googleusercontent.com/d/15uarRfasN74SqmKRiJcByMHUfEkwecB4',
     bgColor: 'bg-red-100',
   },
   {
-    name: 'Dewi Lestari, S.Pd',
-    role: 'Guru Kelas 6B',
-    image: 'https://picsum.photos/seed/dewi/300/300',
-    bgColor: 'bg-orange-200',
+    name: 'Winda Indri Hastuti, S.Pd',
+    role: 'Guru Kelas 5C',
+    image: 'https://lh3.googleusercontent.com/d/1m5YgM5ycHVSIvgRqVxbC13eISp2OUaTE',
+    bgColor: 'bg-rose-100',
   },
   {
-    name: 'Ahmad Fauzi',
-    role: 'Tenaga Administrasi (TU)',
-    image: 'https://picsum.photos/seed/ahmad/300/300',
-    bgColor: 'bg-orange-300',
+    name: 'Tina Violenta, S.Pd',
+    role: 'Guru Kelas 4A',
+    image: 'https://lh3.googleusercontent.com/d/1EXZxvm7yUJfX0rQfk4GYASa5z_At3yVe',
+    bgColor: 'bg-indigo-100',
   },
   {
-    name: 'Fitri Handayani',
-    role: 'Pustakawan',
-    image: 'https://picsum.photos/seed/fitri/300/300',
+    name: 'Iqbal Nurzeha, S.Pd',
+    role: 'Guru Kelas 4B',
+    image: 'https://lh3.googleusercontent.com/d/1Cy0_Fmjy9K_1n-YxeE6DGyEYbjkYGeE0',
+    bgColor: 'bg-blue-200',
+  },
+  {
+    name: 'Sri Jayati, S.Pd',
+    role: 'Guru Kelas 3',
+    image: 'https://lh3.googleusercontent.com/d/1PwZtnTAlrvDF1Sai9craubmsY3472Dbh',
+    bgColor: 'bg-yellow-100',
+  },
+  {
+    name: 'Riri Dzikrianti, S.Pd',
+    role: 'Guru Kelas 2A',
+    image: 'https://lh3.googleusercontent.com/d/1ee03biGJQnAIJ4PLPTA_Rkae8TK061K1',
+    bgColor: 'bg-purple-100',
+  },
+  {
+    name: 'Ista Annisa, S.Pd',
+    role: 'Guru Kelas 2B',
+    image: 'https://lh3.googleusercontent.com/d/13-OZ2zUOR9LbvAIfvq2EeXXgQa17Ug22',
+    bgColor: 'bg-fuchsia-100',
+  },
+  {
+    name: 'Yayah Munyati, S.Pd',
+    role: 'Guru Kelas 1A',
+    image: 'https://lh3.googleusercontent.com/d/1N9pULxzbYWDN-jiYdTeknixYUB4Vl_Uw',
+    bgColor: 'bg-yellow-200',
+  },
+  {
+    name: 'Nararya Piardini, S.Pd',
+    role: 'Guru Kelas 1B',
+    image: 'https://lh3.googleusercontent.com/d/1clq9nEMjXTvHJQeuuItnVGQL8GT1PeF2',
+    bgColor: 'bg-pink-100',
+  },
+  {
+    name: 'Desy Ratnasari, S.Pd',
+    role: 'Guru Kelas 1C',
+    image: 'https://lh3.googleusercontent.com/d/16p6k_1lRv9ZmzKHl0kWdhTPAslTOvPhr',
     bgColor: 'bg-orange-100',
   },
   {
-    name: 'Joko Supriyanto',
-    role: 'Petugas Keamanan',
-    image: 'https://picsum.photos/seed/joko/300/300',
+    name: 'Prabowo Setya Nugroho, S.Pd',
+    role: 'Guru PJOK',
+    image: 'https://lh3.googleusercontent.com/d/1kyd0jQNX8MPeTrVbYmy5mdwRMFTtW1WA',
+    bgColor: 'bg-blue-100',
+  },
+  {
+    name: 'Muchari Tri Widodo, S.Ag',
+    role: 'Guru PAI',
+    image: 'https://lh3.googleusercontent.com/d/1ArfSKLsjLS8hXtWxUhKN3p_EptnYPQK8',
+    bgColor: 'bg-green-100',
+  },
+  {
+    name: 'Abdurohim Boymau, S.Pd',
+    role: 'Guru PAI',
+    image: 'https://lh3.googleusercontent.com/d/19pCiyfCXMz8mV06thayDwqtxvPX1jYCy',
+    bgColor: 'bg-teal-100',
+  },
+  {
+    name: 'Tri Hadi',
+    role: 'Operator',
+    image: 'https://lh3.googleusercontent.com/d/1aApRGfMWbdy_doSsaSoq4M5ADToRX2Qy',
+    bgColor: 'bg-cyan-100',
+  },
+  {
+    name: 'Muhammad Hasbi',
+    role: 'Penjaga Sekolah',
+    image: 'https://lh3.googleusercontent.com/d/15tFcNXNAS5BusvvpFYWq48EraEHc62pl',
     bgColor: 'bg-gray-200',
+  },
+  {
+    name: 'Erwin',
+    role: 'Penjaga Sekolah',
+    image: 'https://lh3.googleusercontent.com/d/1UtsARhfgLdBDsbeKBxQgd6RUSC_c0YDf',
+    bgColor: 'bg-slate-200',
   },
 ];
 
@@ -75,25 +147,6 @@ export default function Guru() {
           </div>
         </div>
 
-        {/* Filters */}
-        <div className="flex flex-wrap gap-3 mb-10">
-          <button className="px-5 py-2 rounded-full bg-blue-500 text-white text-sm font-medium shadow-sm">
-            Semua
-          </button>
-          <button className="px-5 py-2 rounded-full bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 text-sm font-medium transition-colors">
-            Kepala Sekolah
-          </button>
-          <button className="px-5 py-2 rounded-full bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 text-sm font-medium transition-colors">
-            Guru Kelas
-          </button>
-          <button className="px-5 py-2 rounded-full bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 text-sm font-medium transition-colors">
-            Guru Mapel
-          </button>
-          <button className="px-5 py-2 rounded-full bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 text-sm font-medium transition-colors">
-            Tenaga Kependidikan
-          </button>
-        </div>
-
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {teachers.map((teacher, index) => (
@@ -102,7 +155,7 @@ export default function Guru() {
                 <img 
                   src={teacher.image} 
                   alt={teacher.name} 
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 mix-blend-multiply"
+                  className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 mix-blend-multiply"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -120,25 +173,6 @@ export default function Guru() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Pagination */}
-        <div className="flex justify-center items-center gap-2">
-          <button className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-gray-50 transition-colors disabled:opacity-50">
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-          <button className="w-10 h-10 rounded-full bg-blue-500 text-white font-medium flex items-center justify-center shadow-sm">
-            1
-          </button>
-          <button className="w-10 h-10 rounded-full bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 font-medium flex items-center justify-center transition-colors">
-            2
-          </button>
-          <button className="w-10 h-10 rounded-full bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 font-medium flex items-center justify-center transition-colors">
-            3
-          </button>
-          <button className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-50 transition-colors">
-            <ChevronRight className="w-5 h-5" />
-          </button>
         </div>
       </div>
     </div>

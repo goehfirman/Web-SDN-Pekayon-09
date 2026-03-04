@@ -31,7 +31,18 @@ export default function Home() {
   return (
     <div className="bg-gray-50 pb-20">
       {/* Hero Section */}
-      <section className="relative bg-blue-500 text-white overflow-hidden">
+      <section className="relative bg-blue-600 text-white overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0">
+          <img 
+            src="https://lh3.googleusercontent.com/d/1c6mppMYsCo_FackQlIBNTiRys6QkUJEz" 
+            alt="Background" 
+            className="w-full h-full object-cover opacity-20"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-blue-600/80 mix-blend-multiply"></div>
+        </div>
+        
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <svg className="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
