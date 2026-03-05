@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import { MapPin, Phone, Mail, Facebook, Instagram, Youtube, Sun, ChevronDown, Menu, X } from 'lucide-react';
+import { MapPin, Phone, Mail, Facebook, Instagram, Youtube, Sun, ChevronDown, Menu, X, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 const navLinks = [
@@ -110,9 +110,14 @@ export default function Layout() {
               <button className="p-2 text-gray-500 hover:text-gray-700 rounded-full hover:bg-gray-100">
                 <Sun className="w-5 h-5" />
               </button>
-              <button className="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium transition-colors">
+              <a 
+                href="http://103.130.165.123:8535/login" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium transition-colors"
+              >
                 Portal Siswa
-              </button>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -196,9 +201,14 @@ export default function Layout() {
                   )
                 ))}
                 <div className="pt-4 border-t border-gray-100">
-                  <button className="w-full bg-blue-500 text-white py-3 rounded-xl font-medium">
+                  <a 
+                    href="http://103.130.165.123:8535/login" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block w-full bg-blue-500 text-white py-3 rounded-xl font-medium text-center"
+                  >
                     Portal Siswa
-                  </button>
+                  </a>
                 </div>
               </div>
             </motion.div>
