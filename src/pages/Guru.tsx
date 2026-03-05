@@ -1,4 +1,4 @@
-import { Search, Mail, Info, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Mail, Info, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const teachers = [
   {
@@ -9,7 +9,7 @@ const teachers = [
   },
   {
     name: 'Suparja, S.Pd',
-    role: 'Wakil Kepala Sekolah Guru Kelas 6B',
+    role: 'Wakil Kepala Sekolah / Guru Kelas 6B',
     image: 'https://lh3.googleusercontent.com/d/1_4CvNwIZWeSJUKyZBAr5FRFgkbQInDzC',
     bgColor: 'bg-lime-100',
   },
@@ -38,14 +38,20 @@ const teachers = [
     bgColor: 'bg-rose-100',
   },
   {
-    name: 'Tina Violenta, S.Pd',
+    name: 'Siti Julaeha, S.Pd',
     role: 'Guru Kelas 4A',
+    image: 'https://lh3.googleusercontent.com/d/1p1HYS7mzUFZDY8qZYc9vFQ7f-fei5w9a',
+    bgColor: 'bg-sky-100',
+  },
+  {
+    name: 'Tina Violenta, S.Pd',
+    role: 'Guru Kelas 4B',
     image: 'https://lh3.googleusercontent.com/d/1EXZxvm7yUJfX0rQfk4GYASa5z_At3yVe',
     bgColor: 'bg-indigo-100',
   },
   {
     name: 'Iqbal Nurzeha, S.Pd',
-    role: 'Guru Kelas 4B',
+    role: 'Guru Kelas 4C',
     image: 'https://lh3.googleusercontent.com/d/1Cy0_Fmjy9K_1n-YxeE6DGyEYbjkYGeE0',
     bgColor: 'bg-blue-200',
   },
@@ -56,10 +62,10 @@ const teachers = [
     bgColor: 'bg-yellow-100',
   },
   {
-    name: 'Riri Dzikrianti, S.Pd',
+    name: 'Nararia Piardini, S.Pd',
     role: 'Guru Kelas 2A',
-    image: 'https://lh3.googleusercontent.com/d/1ee03biGJQnAIJ4PLPTA_Rkae8TK061K1',
-    bgColor: 'bg-purple-100',
+    image: 'https://lh3.googleusercontent.com/d/1clq9nEMjXTvHJQeuuItnVGQL8GT1PeF2',
+    bgColor: 'bg-pink-100',
   },
   {
     name: 'Ista Annisa, S.Pd',
@@ -68,20 +74,20 @@ const teachers = [
     bgColor: 'bg-fuchsia-100',
   },
   {
+    name: 'Riri Dzikrianti, S.Pd',
+    role: 'Guru Kelas 2C',
+    image: 'https://lh3.googleusercontent.com/d/1ee03biGJQnAIJ4PLPTA_Rkae8TK061K1',
+    bgColor: 'bg-purple-100',
+  },
+  {
     name: 'Yayah Munyati, S.Pd',
     role: 'Guru Kelas 1A',
     image: 'https://lh3.googleusercontent.com/d/1N9pULxzbYWDN-jiYdTeknixYUB4Vl_Uw',
     bgColor: 'bg-yellow-200',
   },
   {
-    name: 'Nararya Piardini, S.Pd',
+    name: 'Desy Ratna Sari, S.Pd',
     role: 'Guru Kelas 1B',
-    image: 'https://lh3.googleusercontent.com/d/1clq9nEMjXTvHJQeuuItnVGQL8GT1PeF2',
-    bgColor: 'bg-pink-100',
-  },
-  {
-    name: 'Desy Ratnasari, S.Pd',
-    role: 'Guru Kelas 1C',
     image: 'https://lh3.googleusercontent.com/d/16p6k_1lRv9ZmzKHl0kWdhTPAslTOvPhr',
     bgColor: 'bg-orange-100',
   },
@@ -92,7 +98,7 @@ const teachers = [
     bgColor: 'bg-blue-100',
   },
   {
-    name: 'Muchari Tri Widodo, S.Ag',
+    name: 'Muchari Tri Widodo, S.Pd',
     role: 'Guru PAI',
     image: 'https://lh3.googleusercontent.com/d/1ArfSKLsjLS8hXtWxUhKN3p_EptnYPQK8',
     bgColor: 'bg-green-100',
@@ -134,16 +140,6 @@ export default function Guru() {
             <p className="text-gray-600 text-lg">
               Kenali pahlawan tanpa tanda jasa yang berdedikasi membimbing dan mendidik siswa-siswi SDN Pekayon 09.
             </p>
-          </div>
-          <div className="relative w-full md:w-80 shrink-0">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <Search className="h-5 w-5 text-gray-400" />
-            </div>
-            <input
-              type="text"
-              className="block w-full pl-10 pr-3 py-3 border border-gray-200 rounded-xl leading-5 bg-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all shadow-sm"
-              placeholder="Cari nama atau posisi..."
-            />
           </div>
         </div>
 

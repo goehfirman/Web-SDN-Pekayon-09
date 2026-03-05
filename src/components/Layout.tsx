@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { MapPin, Phone, Mail, Facebook, Instagram, Youtube, Sun, ChevronDown, Menu, X, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -20,11 +20,51 @@ const navLinks = [
   { name: 'Bahan Ajar', path: '/bahan-ajar' },
 ];
 
+const quotes = [
+  {
+    text: "Ing Ngarsa Sung Tulada, Ing Madya Mangun Karsa, Tut Wuri Handayani.",
+    author: "Ki Hajar Dewantara"
+  },
+  {
+    text: "Pendidikan adalah senjata paling mematikan di dunia, karena dengan pendidikan, Anda dapat mengubah dunia.",
+    author: "Nelson Mandela"
+  },
+  {
+    text: "Pendidikan tidak mengubah dunia. Pendidikan mengubah orang. Orang mengubah dunia.",
+    author: "Paulo Freire"
+  },
+  {
+    text: "Tujuan pendidikan itu untuk mempertajam kecerdasan, memperkukuh kemauan serta memperhalus perasaan.",
+    author: "Tan Malaka"
+  },
+  {
+    text: "Pendidikan bukan persiapan untuk hidup; pendidikan adalah hidup itu sendiri.",
+    author: "John Dewey"
+  }
+];
+
 export default function Layout() {
   const location = useLocation();
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileAboutOpen, setIsMobileAboutOpen] = useState(false);
+  const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
+
+  // Initialize random quote on mount
+  useEffect(() => {
+    const initialIndex = Math.abs(location.pathname.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0)) % quotes.length;
+    setCurrentQuoteIndex(initialIndex);
+  }, []);
+
+  // Auto rotate quotes
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentQuoteIndex((prev) => (prev + 1) % quotes.length);
+    }, 8000); // Change every 8 seconds
+    return () => clearInterval(interval);
+  }, []);
+
+  const currentQuote = quotes[currentQuoteIndex];
 
   return (
     <div className="min-h-screen flex flex-col font-sans text-gray-800 bg-gray-50">
@@ -220,6 +260,37 @@ export default function Layout() {
       <main className="flex-grow">
         <Outlet />
       </main>
+
+      {/* Quote Section */}
+      <section className="bg-white py-16 border-t border-gray-100 overflow-hidden">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <div className="inline-block p-3 bg-blue-50 rounded-full mb-6">
+            <svg className="w-6 h-6 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C15.4647 8 15.017 8.44772 15.017 9V12C15.017 12.5523 14.5693 13 14.017 13H11.017C10.4647 13 10.017 12.5523 10.017 12V9C10.017 7.34315 11.3601 6 13.017 6H19.017C20.6739 6 22.017 7.34315 22.017 9V15C22.017 17.7614 19.7784 20 17.017 20H14.017V21H14.017ZM3.017 21L3.017 18C3.017 16.8954 3.91243 16 5.017 16H8.017C8.56928 16 9.017 15.5523 9.017 15V9C9.017 8.44772 8.56928 8 8.017 8H5.017C4.46472 8 4.017 8.44772 4.017 9V12C4.017 12.5523 3.56928 13 3.017 13H0.017C-0.535282 13 -1.017 12.5523 -1.017 12V9C-1.017 7.34315 0.326142 6 1.983 6H8.017C9.67386 6 11.017 7.34315 11.017 9V15C11.017 17.7614 8.77843 20 6.017 20H3.017V21H3.017Z" />
+            </svg>
+          </div>
+          
+          <div className="relative h-40 md:h-32 flex items-center justify-center">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentQuoteIndex}
+                initial={{ opacity: 0, scale: 0.95, y: 10 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 1.05, y: -10 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="absolute inset-0 flex flex-col items-center justify-center"
+              >
+                <blockquote className="text-xl md:text-2xl font-serif italic text-gray-700 leading-relaxed max-w-3xl">
+                  "{currentQuote.text}"
+                </blockquote>
+                <cite className="block text-blue-600 font-semibold not-italic mt-4 tracking-wide">
+                  — {currentQuote.author}
+                </cite>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
+      </section>
 
       {/* Footer */}
       <footer className="bg-[#111827] text-gray-300 pt-16">
