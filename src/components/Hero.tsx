@@ -62,7 +62,7 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-3 rounded-full font-bold transition-colors shadow-lg"
             >
-              Info PPDB
+              Info SPMB
             </a>
             <a 
               href="/kontak"
