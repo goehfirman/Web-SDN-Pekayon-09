@@ -1,12 +1,40 @@
 import { ArrowDown, Eye, Sparkles, GraduationCap, Brain, Trophy, Leaf, HeartHandshake, Star, Gamepad2, Handshake, Laptop, TreePine, Users, Info, FileText, Building, Phone } from 'lucide-react';
+import { useState, useEffect } from 'react';
+
+const galleryImages = [
+  "https://lh3.googleusercontent.com/d/1c6mppMYsCo_FackQlIBNTiRys6QkUJEz",
+  "https://lh3.googleusercontent.com/d/1gVqcssXigg870qVNhlFmuQnT_ICZY0L9",
+  "https://lh3.googleusercontent.com/d/1DZc5Nc1VmprLDKIw2nWthB-STK7rA3Dj",
+  "https://lh3.googleusercontent.com/d/1293_Kzy-TWRUJG3FQO1v8gFWibrwSTBV",
+  "https://lh3.googleusercontent.com/d/1BADijyBCsmSuhD6ke3UDKe9xUL34WAUz",
+  "https://lh3.googleusercontent.com/d/18e6utzSXfd2oBIAltidZNriplbMH0ffG",
+  "https://lh3.googleusercontent.com/d/1imAWjFM2j23VzuNIMCC-Xva0gOmxQofg",
+  "https://lh3.googleusercontent.com/d/1-oBB56LwqcCQX0FoJTOSrJAY7lUiGvCO",
+  "https://lh3.googleusercontent.com/d/1nVQ0L-GO2wBSSOO0HXVkNhqxm_FmoAtP",
+  "https://lh3.googleusercontent.com/d/1cOvSTzIoAo5M67oVyfibIgvz1XLu_4e0",
+  "https://lh3.googleusercontent.com/d/1V7X5yOLn1i1ze4vUHJ9D6I-Gy4Iiu0n6",
+  "https://lh3.googleusercontent.com/d/1575fBgPaA_1kmAHvFA0RwRXl3rR98Zz9",
+  "https://lh3.googleusercontent.com/d/18oUzFKCKDE0G9eGbOGJQdIAez3Sqo7BE",
+  "https://lh3.googleusercontent.com/d/17RIoLzgU6LPbwh9C51G3BlAL3SjZSwJx"
+];
 
 export default function Profil() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % galleryImages.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="bg-slate-50 text-slate-900">
       {/* Header / Hero */}
       <header className="bg-gradient-to-br from-blue-600 to-blue-700 relative py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <img alt="Background Pattern" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo319L2dtCdRIRmJhwKDyjIfLlmSQkVi7eytlu2bfvWFVsXdl_v8Cf_wzlVLkAtb3IuPaQAx_oPSvgJyRBpI_igbd1yPnxhAW9RyClvLMwUPsS1G40XNuzokVzyt4yWVMCUQ2wvlrOon6WqAGXB_I5LIn-Q0i6qlZwIjwKdOju11iy7E2yz_JbY96DHXNVFBvLh20w7_OgLCWlwxklbpuYcNx-hxQGxwpoAF25HlULZd8j7bFtTqz-KVyCdzcN8zQoROccPPw47t75" referrerPolicy="no-referrer" />
+          <img alt="Background Pattern" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/d/1h9PDnGk4q0jWuC5XvP2Ym3IdQpNJX8wD" referrerPolicy="no-referrer" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-12">
@@ -28,9 +56,22 @@ export default function Profil() {
                 </a>
               </div>
             </div>
+            {/* Slideshow Gallery */}
             <div className="relative w-full max-w-lg">
               <div className="absolute -inset-4 bg-amber-400/30 blur-2xl rounded-full"></div>
-              <img alt="Gedung SDN Pekayon 09" className="relative rounded-2xl shadow-2xl border-4 border-white/20 object-cover aspect-video md:aspect-[4/3]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9XCf6XLBiA2rFfkAHZ5virAfcr60JPXYmL-yxgLfdDDgh8QJFqdYaBdM8LZOMGTk2qMNDalbzPF64I-opz_naSLbdQd84PMBhXlCxHWRbukgyRJD-KgUYT4-MEOy2mgn0c0jgOWWOVy-Ps2lByTNrwrKGugS4zKHZf804GIeNuaweLAnFzvA4zFFbhZJ4NxCYJ0ajzPilgcBT8iwTa4AJFA2Me6sizGpyTSV_fpQmM9P5vM0SypUBw4CFtqikKHfKf8R0XEt48Mma" referrerPolicy="no-referrer" />
+              <div className="relative z-10 w-full aspect-video md:aspect-[4/3] rounded-2xl shadow-2xl border-4 border-white/20 overflow-hidden bg-blue-400/20">
+                {galleryImages.map((img, index) => (
+                  <img 
+                    key={index}
+                    src={img} 
+                    alt={`Gallery ${index + 1}`} 
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+                      index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                    }`}
+                    referrerPolicy="no-referrer"
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
