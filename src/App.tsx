@@ -14,8 +14,22 @@ import ProgramUnggulan from './pages/ProgramUnggulan';
 import SPMB from './pages/SPMB';
 import Kontak from './pages/Kontak';
 import Berita from './pages/Berita';
+import Maintenance from './pages/Maintenance';
+
+// Set this to true to enable maintenance mode and display it across all routes
+const IS_MAINTENANCE_MODE = true;
 
 export default function App() {
+  if (IS_MAINTENANCE_MODE) {
+    return (
+      <BrowserRouter>
+        <Routes>
+          <Route path="*" element={<Maintenance />} />
+        </Routes>
+      </BrowserRouter>
+    );
+  }
+
   return (
     <BrowserRouter>
       <Routes>

@@ -18,6 +18,7 @@ const navLinks = [
   { name: 'Guru & Tendik', path: '/guru' },
   { name: 'Berita', path: '/berita' },
   { name: 'Bahan Ajar', path: '/bahan-ajar' },
+  { name: 'Asesmen Daring Terintegrasi (ADT)', path: 'http://158.140.178.132:3000/', isExternal: true },
 ];
 
 const quotes = [
@@ -129,6 +130,16 @@ export default function Layout() {
                       )}
                     </AnimatePresence>
                   </div>
+                ) : link.isExternal ? (
+                  <a
+                    key={link.name}
+                    href={link.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-medium transition-colors text-gray-600 hover:text-blue-600 py-7 shrink-0"
+                  >
+                    {link.name}
+                  </a>
                 ) : (
                   <Link
                     key={link.name}
@@ -156,7 +167,7 @@ export default function Layout() {
                 rel="noopener noreferrer"
                 className="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium transition-colors"
               >
-                Portal Siswa
+                Portal Guru
               </a>
             </div>
 
@@ -225,6 +236,17 @@ export default function Layout() {
                         )}
                       </AnimatePresence>
                     </div>
+                  ) : link.isExternal ? (
+                    <a
+                      key={link.name}
+                      href={link.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="block font-medium py-2 text-gray-600 hover:text-blue-600"
+                    >
+                      {link.name}
+                    </a>
                   ) : (
                     <Link
                       key={link.name}
@@ -247,7 +269,7 @@ export default function Layout() {
                     rel="noopener noreferrer"
                     className="block w-full bg-blue-500 text-white py-3 rounded-xl font-medium text-center"
                   >
-                    Portal Siswa
+                    Portal Guru
                   </a>
                 </div>
               </div>

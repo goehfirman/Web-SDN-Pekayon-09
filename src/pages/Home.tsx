@@ -201,7 +201,7 @@ export default function Home() {
             <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
               <div className="flex items-center gap-3 mb-6">
                 <ExternalLink className="w-5 h-5 text-emerald-600" />
-                <h3 className="font-bold text-gray-900">Tautan Penting</h3>
+                <h3 className="font-bold text-gray-900">Portal Guru</h3>
               </div>
               <div className="space-y-4">
                 <a 
