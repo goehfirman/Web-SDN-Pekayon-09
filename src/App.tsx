@@ -17,7 +17,7 @@ import Berita from './pages/Berita';
 import Maintenance from './pages/Maintenance';
 
 // Set this to true to enable maintenance mode and display it across all routes
-const IS_MAINTENANCE_MODE = true;
+const IS_MAINTENANCE_MODE = false;
 
 export default function App() {
   if (IS_MAINTENANCE_MODE) {
